@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* TSTS Passenger App Theme */
+  /* Background colors */
+  --pass-bg: oklch(0.98 0 0);
+  --pass-surface: oklch(1 0 0);
+  --pass-foreground: oklch(0.15 0 0);
+  --pass-muted: oklch(0.5 0 0);
+  --pass-border: oklch(0.9 0 0);
+
+  /* Primary - Coral/Orange */
+  --pass-primary: oklch(0.62 0.25 25);
+  --pass-primary-dark: oklch(0.55 0.28 22);
+
+  /* Accent - Sky Blue */
+  --pass-accent: oklch(0.62 0.18 250);
+
+  /* Status colors */
+  --pass-success: oklch(0.65 0.2 142);
+  --pass-warning: oklch(0.7 0.22 60);
+  --pass-error: oklch(0.62 0.23 20);
+}
+
+.dark {
+  --pass-bg: oklch(0.08 0 0);
+  --pass-surface: oklch(0.12 0.01 260);
+  --pass-foreground: oklch(0.98 0 0);
+  --pass-muted: oklch(0.65 0.02 250);
+  --pass-border: oklch(0.2 0.02 260);
+}
+
+@theme inline {
+  --color-pass-bg: var(--pass-bg);
+  --color-pass-surface: var(--pass-surface);
+  --color-pass-foreground: var(--pass-foreground);
+  --color-pass-muted: var(--pass-muted);
+  --color-pass-border: var(--pass-border);
+  --color-pass-primary: var(--pass-primary);
+  --color-pass-primary-dark: var(--pass-primary-dark);
+  --color-pass-accent: var(--pass-accent);
+  --color-pass-success: var(--pass-success);
+  --color-pass-warning: var(--pass-warning);
+  --color-pass-error: var(--pass-error);
+}
+
+@layer base {
+  * {
+    border-color: var(--pass-border);
+  }
+  body {
+    background-color: var(--pass-bg);
+    color: var(--pass-foreground);
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+}
